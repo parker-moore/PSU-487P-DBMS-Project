@@ -1,2 +1,14 @@
 # PSU-487P-DBMS-Project
-Get experience with a relational-style data management system of your choice
+
+Work for Part 1:
+- Wrote data generation script according to rules of Wisconsin Benchmark specifications in python
+- Uploaded test data set of 50 rows to GCP
+
+System Selection:
+Chose BigQuery(GCP) to gain experience a system commonly used by major compaines like Snapchat and Airbnb.
+
+Lesson Learned:
+- How to create and manage a database in GCP
+- How to write a data generation to .csv script
+
+![](test_table_DBMS487P.png)
