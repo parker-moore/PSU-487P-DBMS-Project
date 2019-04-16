@@ -2,7 +2,7 @@
 
 Work for Part 1:
 - Wrote data generation script according to rules of Wisconsin Benchmark specifications in python
-- Uploaded test data set of 50 rows to GCP
+- Uploaded test data .csv to GCP
 
 System Selection:
 Chose BigQuery(GCP) to gain experience with a system commonly used by major compaines like Snapchat and Airbnb.
