@@ -78,24 +78,35 @@ def buildLists(size):
     stringu2 = buildString(unique2)
     string4 = buildString4(size)
     
-    with open('test.csv',mode='w',newline='') as testFile:
+    list = []
+
+    with open('test_data.csv',mode='w',newline='') as testFile:
+        #add 7 to list, write row to csv
+        i = 0
+        while i < size:
+            list.append([])
+            list[i].append(unique1[i])
+            list[i].append(unique2[i])
+            list[i].append(two[i])
+            list[i].append(four[i])
+            list[i].append(ten[i])
+            list[i].append(twenty[i])
+            list[i].append(onePercent[i])
+            list[i].append(tenPercent[i])
+            list[i].append(fiftyPercent[i])
+            list[i].append(unique3[i])
+            list[i].append(evenOnePercent[i])
+            list[i].append(oddOnePercent[i])
+            list[i].append(stringu1[i])
+            list[i].append(stringu2[i])
+            list[i].append(string4[i])               
+            i += 1 
+
         wr = csv.writer(testFile,quoting=csv.QUOTE_ALL)
-        wr.writerow(unique1)
-        wr.writerow(unique2)
-        wr.writerow(two)
-        wr.writerow(four)
-        wr.writerow(ten)
-        wr.writerow(twenty)
-        wr.writerow(onePercent)
-        wr.writerow(tenPercent)
-        wr.writerow(twentyPercent)
-        wr.writerow(fiftyPercent)
-        wr.writerow(unique3)
-        wr.writerow(evenOnePercent)
-        wr.writerow(oddOnePercent)
-        wr.writerow(stringu1)
-        wr.writerow(stringu2)
-        wr.writerow(string4)
+        i = 0
+        while i < size:
+            wr.writerow(list[i])
+            i += 1
 
 
 def main():
