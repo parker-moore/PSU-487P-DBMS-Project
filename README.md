@@ -1,7 +1,7 @@
 # PSU-487P-DBMS-Project
 
 Work for Part 1:
-- Wrote data generation script according to rules of Wisconsin Benchmark specifications in python
+- Wrote .py data generation script according Wisconsin Benchmark specifications
 - Uploaded test data .csv to GCP
 
 System Selection:
