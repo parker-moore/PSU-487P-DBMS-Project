@@ -26,37 +26,38 @@ def buildPercent(onePercent, even):
     #print(list)
     return list
 
-def buildString(size, rand):
-    alpha = [i for i in range(ord('A'),ord('W'))]
+def convert(unique):
+    i = 6
+    rem = 0
+    tmp = ""
+    while unique > 0:
+        rem = unique % 26
+        tmp = chr(ord('A') + rem) + tmp
+        unique //= 26
+        i -= 1
+    tmp = "A"*i + tmp
+    return tmp
+
+
+def buildString(unique):
     list = []
-    c = 0
-    
-    for i in alpha:
-        for j in alpha:
-            for k in alpha:
-                if c < size:
-                    list.append(str(chr(k)) + "x"*25 + str(chr(j)) + "x"*24 + str(chr(i)))
-                    c += 1
-                else:
-                    break
-                
-    if(rand):
-        random.shuffle(list)
-    #print(list)
+    for i in unique:
+        converted = convert(int(i))
+        list.append(converted + "x"*45)
     return list
 
 def buildString4(size):
     list = []
-    list.append("A" + "x"*25 + "A" + "x"*24 + "A")
-    list.append("H" + "x"*25 + "H" + "x"*24 + "H")
-    list.append("O" + "x"*25 + "O" + "x"*24 + "O")
-    list.append("V" + "x"*25 + "V" + "x"*24 + "V")
+    list.append("A"*4 + "x"*45)
+    list.append("H"*4 + "x"*45)
+    list.append("O"*4 + "x"*45)
+    list.append("V"*4 + "x"*45)
     c = 0
     string4 = []
     while c < size:
         string4.append(list[c%4])
         c += 1
-    print (string4)
+    #print (string4)
     return string4
     
 def buildLists(size):
@@ -73,32 +74,43 @@ def buildLists(size):
     unique3 = unique1.copy()
     evenOnePercent = buildPercent(onePercent, True)
     oddOnePercent = buildPercent(onePercent, False)
-    stringu1 = buildString(size, True)
-    stringu2 = buildString(size, False)
+    stringu1 = buildString(unique1)
+    stringu2 = buildString(unique2)
     string4 = buildString4(size)
     
-    with open('test.csv',mode='w',newline='') as testFile:
+    list = []
+
+    with open('test_data.csv',mode='w',newline='') as testFile:
+        #add 7 to list, write row to csv
+        i = 0
+        while i < size:
+            list.append([])
+            list[i].append(unique1[i])
+            list[i].append(unique2[i])
+            list[i].append(two[i])
+            list[i].append(four[i])
+            list[i].append(ten[i])
+            list[i].append(twenty[i])
+            list[i].append(onePercent[i])
+            list[i].append(tenPercent[i])
+            list[i].append(fiftyPercent[i])
+            list[i].append(unique3[i])
+            list[i].append(evenOnePercent[i])
+            list[i].append(oddOnePercent[i])
+            list[i].append(stringu1[i])
+            list[i].append(stringu2[i])
+            list[i].append(string4[i])               
+            i += 1 
+
         wr = csv.writer(testFile,quoting=csv.QUOTE_ALL)
-        wr.writerow(unique1)
-        wr.writerow(unique2)
-        wr.writerow(two)
-        wr.writerow(four)
-        wr.writerow(ten)
-        wr.writerow(twenty)
-        wr.writerow(onePercent)
-        wr.writerow(tenPercent)
-        wr.writerow(twentyPercent)
-        wr.writerow(fiftyPercent)
-        wr.writerow(unique3)
-        wr.writerow(evenOnePercent)
-        wr.writerow(oddOnePercent)
-        wr.writerow(stringu1)
-        wr.writerow(stringu2)
-        wr.writerow(string4)
+        i = 0
+        while i < size:
+            wr.writerow(list[i])
+            i += 1
 
 
 def main():
-    buildLists(10)
+    buildLists(50)
 
 if __name__ == '__main__':
     main()
