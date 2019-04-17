@@ -27,15 +27,15 @@ def buildPercent(onePercent, even):
     return list
 
 def convert(unique):
-    i = 6
+    i = 7
     rem = 0
     tmp = ""
     while unique > 0:
         rem = unique % 26
-        tmp = chr(ord('A') + rem) + tmp
+        tmp = tmp + chr(ord('A') + rem)
         unique //= 26
         i -= 1
-    tmp = "A"*i + tmp
+    tmp = tmp + "A"*i
     return tmp
 
 
