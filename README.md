@@ -1,4 +1,6 @@
 # PSU-487P-DBMS-Project
+## Parker Moore
+## Carter Wilson
 
 Work for Part 1:
 - Wrote .py data generation script according Wisconsin Benchmark specifications
