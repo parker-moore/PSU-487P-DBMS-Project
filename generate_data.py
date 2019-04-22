@@ -93,6 +93,7 @@ def buildLists(size):
             list[i].append(twenty[i])
             list[i].append(onePercent[i])
             list[i].append(tenPercent[i])
+            list[i].append(twentyPercent[i])
             list[i].append(fiftyPercent[i])
             list[i].append(unique3[i])
             list[i].append(evenOnePercent[i])
