@@ -14,3 +14,4 @@ Lesson Learned:
 - How to write a data generation to .csv script
 
 ![](Data_loading_demo1.png)
+![](Data_loading_demo2.png)
