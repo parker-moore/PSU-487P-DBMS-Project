@@ -13,4 +13,4 @@ Lesson Learned:
 - How to create and manage a database in GCP
 - How to write a data generation to .csv script
 
-![](demopic.JPG)
+![](Data_loading_demo1.png)
