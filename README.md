@@ -16,4 +16,3 @@ Lesson Learned:
 
 ![](Data_loading_demo1.png)
 ![](Data_loading_demo2.png)
-[embed]https://github.com/parker-moore/PSU-487P-DBMS-Project/blob/master/Part%202/CS587%20Project%20pt%202%20Research.pdf
